@@ -3,7 +3,7 @@
 sudo xbps-install -Su void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree void-repo-debug -y &&
 
 #install amd gpu drivers, opengl, vulkan and video acceletarion
-sudo xbps-install linux-firmware-amd mesa-dri vulkan-loader mesa-vulkan-radeon amdvlk xf86-video-amdgpu mesa-vaapi mesa-vdpau-y &&
+sudo xbps-install linux-firmware-amd mesa-dri vulkan-loader mesa-vulkan-radeon amdvlk xf86-video-amdgpu mesa-vaapi mesa-vdpau -y &&
 
 #audio setup (pulseaudio)
 sudo xbps-install alsa-utils apulse alsa-plugins-pulseaudio -y &&
@@ -28,11 +28,11 @@ sudo xbps-install dbus -y && sudo ln -s /etc/sv/dbus /var/service &&
 sudo xbps-install xorg -y &&
 
 #Fonts config
-ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/ &&
+sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/ &&
 sudo xbps-reconfigure -f fontconfig &&
 
 #General apps i use 
-sudo xbps-install deja-dup libreoffice-calc libreoffice-writer firefox okular geary chromium virtualbox-ose virtualbox-ose-dkms obs gedit gnome-disks gnome-system-monitor 
+sudo xbps-install deja-dup libreoffice-calc libreoffice-writer firefox okular geary chromium virtualbox-ose virtualbox-ose-dkms obs gedit gnome-disks gnome-system-monitor -y && 
 
 #install Steam and necessary deps
 sudo xbps-install steam libgcc-32bit libstdc++-32bit libdrm-32bit libglvnd-32bit mesa-dri-32bit -y && 
