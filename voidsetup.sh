@@ -27,9 +27,10 @@ sudo xbps-install dbus -y && sudo ln -s /etc/sv/dbus /var/service &&
 #Display server 
 sudo xbps-install xorg -y &&
 
-#Fonts config
+#Fonts installation and config (if you don't want any of the fonts you can just remove the ones you don't want.)
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/ &&
 sudo xbps-reconfigure -f fontconfig &&
+sudo xbps-install dejavu-fonts-ttf google-fonts-ttf liberation-fonts-ttf nerd-fonts-ttf noto-fonts-ttf noto-fonts-ttf-extra noto-fonts-emoji ttf-opensans -y &&
 
 #General apps i use 
 sudo xbps-install deja-dup libreoffice-calc libreoffice-writer firefox okular geary chromium virtualbox-ose virtualbox-ose-dkms obs gedit gnome-disks gnome-system-monitor -y && 
